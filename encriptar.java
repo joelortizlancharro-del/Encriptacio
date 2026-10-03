@@ -38,6 +38,8 @@ public class encriptar {
     private int X = 24;
     private int Y = 25;
     private int Z = 26;
+    private int coma = 27;
+    private int punt = 28;
 
     public ArrayList<Integer> encriptacio(String missatge, int clau){
         int recorreClau = 0;
@@ -51,7 +53,7 @@ public class encriptar {
                 missatgePerIncriptar.add(missatge.charAt(i));
                 missatgePerIncriptar.set(i, Character.toUpperCase(missatgePerIncriptar.get(i)));
             }
-        
+   
             if(missatgePerIncriptar.get(i) == 'A'){
                 missatgeEncriptat.add(A);
             }
@@ -106,9 +108,16 @@ public class encriptar {
             } else if(missatgePerIncriptar.get(i) == 'Z'){
                 missatgeEncriptat.add(Z);
             }
+            else if(missatgePerIncriptar.get(i) == ','){
+                missatgeEncriptat.add(coma);
+            }
+            else if(missatgePerIncriptar.get(i) == '.'){
+                missatgeEncriptat.add(punt);
+            }
             else if(missatgePerIncriptar.get(i) == '0'){
                 missatgeEncriptat.add(0);
             }
+            
         }
         
         for(int i = 0; i < missatgeEncriptat.size(); i++){
